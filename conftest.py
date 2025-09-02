@@ -6,6 +6,7 @@ from selenium.webdriver.chrome.service import Service
 import logging
 from datetime import datetime
 import os
+import stat
 from pages.cart_page import CartPage
 from pages.checkout_complete_page import CheckoutCompletePage
 from pages.checkout_step_one_page import CheckoutStepOnePage
@@ -34,7 +35,10 @@ def driver(base_url):
         "profile.password_manager_leak_detection": False
     }
     options.add_experimental_option("prefs", prefs)
-    service = Service(ChromeDriverManager().install())
+    driver_path = ChromeDriverManager().install()
+    st = os.stat(driver_path)
+    os.chmod(driver_path, st.st_mode | stat.S_IEXEC)
+    service = Service(driver_path)
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(5)
     driver.maximize_window()

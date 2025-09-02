@@ -35,7 +35,8 @@ def driver(base_url):
         "profile.password_manager_leak_detection": False
     }
     options.add_experimental_option("prefs", prefs)
-    driver_path = ChromeDriverManager().install()
+    driver_dir = ChromeDriverManager().install()
+    driver_path = os.path.join(driver_dir, "chromedriver-linux64", "chromedriver")
     st = os.stat(driver_path)
     os.chmod(driver_path, st.st_mode | stat.S_IEXEC)
     service = Service(driver_path)

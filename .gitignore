@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Virtual environments
+venv/
+.env/
+.env.* 
+
+# Pytest cache
+.pytest_cache/
+
+# Selenium / WebDriver
+chromedriver
+geckodriver
+IEDriverServer.exe
+*.zip
+
+# Test reports / artifacts
+*.xml
+*.html
+*.json
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# GitHub Actions logs / artifacts
+.github/workflows/*.log

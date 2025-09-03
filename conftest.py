@@ -1,12 +1,11 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import logging
 from datetime import datetime
 import os
-import stat
+import shutil
 from pages.cart_page import CartPage
 from pages.checkout_complete_page import CheckoutCompletePage
 from pages.checkout_step_one_page import CheckoutStepOnePage
@@ -29,7 +28,8 @@ def driver(base_url):
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
 
-    service = Service(ChromeDriverManager().install())
+    driver_path = shutil.which("chromedriver")
+    service = Service(driver_path)
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(5)
     driver.get(base_url)

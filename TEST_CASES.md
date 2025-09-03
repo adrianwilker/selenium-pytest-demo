@@ -33,7 +33,7 @@
 | **Steps to reproduce** | 1. Log in with valid credentials <br> 2. Do not add any items to the cart <br> 3. Click the cart icon (which is empty) <br> 4. Click the Checkout button <br> 5. Fill in the shipping information (First Name, Last Name, Zip/Postal Code) <br> 6. Continue to checkout.
 | **Current Result** | The system allows you to complete the purchase and displays the confirmation message: "Thank you for your order!"
 | **Expected Result** | The system should prevent the user from starting or completing checkout without items in the cart by displaying an error message or disabling the action.
-| **Evidence** | <inserir gif>
+| **Evidence** | ![Evidence for BUG01](https://s6.ezgif.com/tmp/ezgif-6169c462e88e9e.gif)
 
 ---
 
@@ -48,7 +48,7 @@
 | **Steps to reproduce** | 1. Log in with valid credentials <br> 2. Do not add any items to the cart <br> 3. Access the page of an invalid product, inserting a non-existent id at the end of the url '/inventory-item.html?id=' <br> 4. Click the 'add to cart' button <br> 5. Access the shopping cart by clicking on the icon in the upper right corner.
 | **Current Result** | The shopping cart page does not load.
 | **Expected Result** | The 'add to cart' button for the fictitious product should be disabled or non-existent.
-| **Evidence** | <inserir gif>
+| **Evidence** | ![Evidence for BUG02](https://s6.ezgif.com/tmp/ezgif-670321505bda42.gif)
 
 ---
 
@@ -63,4 +63,4 @@
 | **Steps to reproduce** | 1. Log in with valid credentials <br> 2. Add a product to the shopping cart <br> 3. Access the shopping cart <br> 4. Click the 'checkout' button <br> 5. Fill in the 'first name' and 'last name' fields with invalid values ​​(numbers, emojis, special characters and blank spaces) 6. Fill in the 'postal code' field with invalid values (emojis, special characters and blank spaces) <br> 7. Click 'continue'
 | **Current Result** | The user is taken to the Overview screen.
 | **Expected Result** | The user should stay on the current screen and an appropriate error message should be displayed, informing that the data entered is not allowed.
-| **Evidence** | <inserir gif>
+| **Evidence** | ![Evidence for BUG03](https://s6.ezgif.com/tmp/ezgif-66567324ea0aea.gif)

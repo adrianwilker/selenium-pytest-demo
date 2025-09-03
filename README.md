@@ -2,6 +2,8 @@
 
 This project contains automated tests of the **SauceDemo** application using **Selenium** and **Pytest**. It simulates user interactions such as adding products to the cart, completing checkout, and verifying product reordering.
 
+[Test cases](https://github.com/adrianwilker/selenium-pytest-demo/blob/main/TEST_CASES.md#test-cases) and [bug reports](https://github.com/adrianwilker/selenium-pytest-demo/blob/main/TEST_CASES.md#-bug-report) are documented in the [TEST_CASES.md](https://github.com/adrianwilker/selenium-pytest-demo/blob/main/TEST_CASES.md) file.
+
 ## Technologies
 
 - Python 3.11+
@@ -71,4 +73,5 @@ Tests are automatically run by GitHub Actions whenever there's a push or pull re
 ## Notes
 
 - Tests marked with ```@pytest.mark.xfail``` indicate known bugs.
+
 - Make sure the Selenium driver is compatible with your browser.

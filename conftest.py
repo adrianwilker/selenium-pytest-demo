@@ -27,22 +27,11 @@ def driver(base_url):
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-notifications")
     options.add_argument("--disable-gpu")
-    prefs = {
-        "credentials_enable_service": False,
-        "profile.password_manager_enabled": False,
-        "profile.password_manager_leak_detection": False
-    }
-    options.add_experimental_option("prefs", prefs)
-    driver_dir = ChromeDriverManager().install()
-    driver_path = os.path.join(driver_dir, "chromedriver-linux64", "chromedriver")
-    st = os.stat(driver_path)
-    os.chmod(driver_path, st.st_mode | stat.S_IEXEC)
-    service = Service(driver_path)
+
+    service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(5)
-    driver.maximize_window()
     driver.get(base_url)
     yield driver
     driver.quit()

@@ -22,6 +22,8 @@ class TestProductPage:
 
   @pytest.mark.xfail(reason="Bug: non-existent product can be added to shopping cart, and shopping cart page does not load.")
   def test_add_invalid_product_to_shopping_cart(self, base_url, product_page, invalid_product_data):
-    product_page.access_page(base_url + "inventory-item.html?id=" + invalid_product_data["id"])
+    invalid_id = "-1"
+    product_page.access_page(base_url + "inventory-item.html?id=" + invalid_id)
     product = product_page.get_product_info()
     assert not product_page.find_element(product["button"]).is_enabled(), "the 'add to cart' button is enabled"
+

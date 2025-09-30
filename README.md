@@ -1,4 +1,7 @@
 # Automated UI Tests for SauceDemo
+![image](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![image](https://img.shields.io/badge/Selenium-00B400?style=for-the-badge&logo=selenium&logoColor=white)
+![image](https://img.shields.io/badge/Pytest-049DD9?style=for-the-badge&logo=pytest&logoColor=white)
 
 This project contains automated tests of the **SauceDemo** application using **Selenium** and **Pytest**. It simulates user interactions such as adding products to the cart, completing checkout, and verifying product reordering.
 
@@ -75,3 +78,4 @@ Tests are automatically run by GitHub Actions whenever there's a push or pull re
 - Tests marked with ```@pytest.mark.xfail``` indicate known bugs.
 
 - Make sure the Selenium driver is compatible with your browser.
+
